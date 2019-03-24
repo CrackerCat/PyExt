@@ -6,6 +6,7 @@ shallow_clone: true
 
 install:
   - choco install -y windbg
+  - choco install -y -pre --params "Include_symbols=1" python3
 
 platform:
   - Win32
