@@ -8,6 +8,11 @@ using namespace std;
 
 namespace PyExt::Remote {
 
+	RemoteType::RemoteType(const string& objectExpression)
+		: remoteType_(make_shared<ExtRemoteTyped>(objectExpression.c_str()))
+	{
+	}
+
 	RemoteType::RemoteType(Offset objectAddress, const std::string& symbolName)
 		: symbolName_(symbolName),
 		  remoteType_(make_shared<ExtRemoteTyped>(symbolName.c_str(), objectAddress, true))
@@ -30,7 +35,7 @@ namespace PyExt::Remote {
 
 	auto RemoteType::symbolName() const -> std::string
 	{
-		return symbolName_;
+		return symbolName_.empty() ? remoteType().GetTypeName() : symbolName_;
 	}
 
 

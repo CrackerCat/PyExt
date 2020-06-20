@@ -92,7 +92,8 @@ namespace PyExt {
 
 		// See if the symbol can be found.
 		try {
-			PyInterpreterState::pyInterpreterStateTypeName();
+			// If we can construct the AutoInterpreterState, assume symbols are good.
+			PyInterpreterState::makeAutoInterpreterState();
 			return;
 		} catch (...) { }
 
@@ -101,7 +102,8 @@ namespace PyExt {
 
 		// Try again now that symbols are reloaded.
 		try {
-			PyInterpreterState::pyInterpreterStateTypeName();
+			// If we can construct the AutoInterpreterState, assume symbols are good.
+			PyInterpreterState::makeAutoInterpreterState();
 			return;
 		}
 		catch (...) { }

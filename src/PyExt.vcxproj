@@ -119,6 +119,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PyInterpreterState.cpp" />
+    <ClCompile Include="pysetautointerpreterstate.cpp" />
     <ClCompile Include="pystack.cpp" />
     <ClCompile Include="pysymfix.cpp" />
     <ClCompile Include="PyThreadState.cpp" />
